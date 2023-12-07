@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc59cb21855418c6dc489caf015f31f4",
+    "content-hash": "9f4831f5b435319bcccf732158a30e1d",
     "packages": [
         {
             "name": "brick/math",
@@ -350,65 +350,6 @@
                 "issues": "https://github.com/generoi/sage-nativeblock/issues"
             },
             "time": "2023-06-24T16:43:59+00:00"
-        },
-        {
-            "name": "generoi/sage-woocommerce",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/generoi/sage-woocommerce.git",
-                "reference": "c49760aa435a312f465bb934ff8fd03e98c69e42"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/generoi/sage-woocommerce/zipball/c49760aa435a312f465bb934ff8fd03e98c69e42",
-                "reference": "c49760aa435a312f465bb934ff8fd03e98c69e42",
-                "shasum": ""
-            },
-            "require": {
-                "roots/acorn": "*"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "~3.0"
-            },
-            "type": "library",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "Genero\\Sage\\WooCommerce\\WooCommerceServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Genero\\Sage\\WooCommerce\\": "src/"
-                }
-            },
-            "archive": {
-                "exclude": [
-                    ".gitignore"
-                ]
-            },
-            "scripts": {
-                "test": [
-                    "phpcs --ignore=vendor --extensions=php --standard=PSR2 ."
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oskar Schöldström",
-                    "email": "public@oxy.fi"
-                }
-            ],
-            "homepage": "https://github.com/generoi/sage-woocommerce",
-            "support": {
-                "source": "https://github.com/generoi/sage-woocommerce/tree/v1.1.1",
-                "issues": "https://github.com/generoi/sage-woocommerce/issues"
-            },
-            "time": "2023-08-15T12:30:33+00:00"
         },
         {
             "name": "graham-campbell/result-type",
