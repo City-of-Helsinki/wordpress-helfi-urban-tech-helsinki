@@ -40,8 +40,6 @@
   },
   "require": {
     "php": "^8.0",
-    "doctrine/inflector": "^2.0",
-    "generoi/sage-demo-content": "dev-master",
     "generoi/sage-nativeblock": "^0.3.1",
     "generoi/sage-woocommerce": "^1.1",
     "log1x/acf-composer": "^2.1",
@@ -59,7 +57,10 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
-    "sort-packages": true
+    "sort-packages": true,
+    "platform": {
+     "php": "8.1"
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
