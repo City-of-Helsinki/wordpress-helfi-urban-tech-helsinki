@@ -1,0 +1,61 @@
+.wp-block-cover {
+  justify-content: flex-start;
+  padding: 0;
+
+  @include mq($until: large) {
+    align-items: flex-end;
+    padding-bottom: 50%;
+    background-position: top !important;
+    background-size: auto 50vw;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+
+    &__image-background {
+      height: 50vw !important;
+    }
+
+    &.has-background-dim::before {
+      display: none;
+    }
+  }
+
+  @include mq($from: large) {
+    min-height: 640px;
+  }
+
+  .wp-block-cover__inner-container {
+    padding: 20px 15px;
+    text-align: inherit;
+    color: inherit;
+
+    @include mq($until: large) {
+      margin-top: 50% !important;
+      margin-bottom: -50% !important;
+      width: 100% !important;
+      background-color: white;
+      color: black;
+
+      .has-white-color {
+        color: black !important;
+      }
+
+      .wp-block-button__link.has-white-color {
+        &::before {
+          background: black;
+        }
+
+        &:hover {
+          color: white !important;
+          border-color: black;
+        }
+      }
+    }
+
+    @include mq($from: large) {
+      padding: 60px 40px 60px 40px;
+      p {
+        max-width: 480px;
+      }
+    }
+  }
+}

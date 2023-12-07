@@ -1,0 +1,55 @@
+
+@mixin breakpoint-value(
+  $map: null
+) {
+  @each $breakpoint, $value in $map {
+    @include mq($breakpoint) {
+      $-bp-value: $value !global;
+
+      @if ($-bp-value) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin ie11 {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($value, $base: null) {
+  // If no base is defined, defer to the global font size
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  // Check if the value is a number
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  // Transform em into rem if someone hands over 'em's
+  @if unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  // Calculate rem if units for $value is not rem or em
+  @if unit($value) != 'rem' {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  // Turn 0rem into 0
+  // stylelint-disable-next-line length-zero-no-unit
+  @if $value == 0rem {
+    $value: 0;
+  }
+
+  @return $value;
+}

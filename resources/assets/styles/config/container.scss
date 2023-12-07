@@ -1,0 +1,38 @@
+:root {
+  --container-width: #{$container-width-xs};
+  --content-width: calc(100% - 15px);
+  --grid-gutter: 24px;
+  --grid-columns: 4;
+  --alignwide-width: 100%;
+  --contentwide-width: calc(100% - var(--grid-gutter));
+
+  @include mq($from: small, $until: medium) {
+    --container-width: #{$container-width-s};
+    --grid-gutter: 24px;
+    --grid-columns: 4;
+  }
+
+  @include mq($from: medium, $until: large) {
+    --container-width: #{$container-width-m};
+    --grid-gutter: 24px;
+    --grid-columns: 8;
+  }
+
+  @include mq($from: large, $until: xlarge) {
+    --container-width: #{$container-width-l};
+    --grid-gutter: 24px;
+    --grid-columns: 12;
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 10);
+    --alignwide-width: var(--container-width);
+    --contentwide-width: var(--alignwide-width);
+  }
+
+  @include mq($from: xlarge) {
+    --container-width: #{$container-width-l};
+    --grid-gutter: 24px;
+    --grid-columns: 12;
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 10);
+    --alignwide-width: var(--container-width);
+    --contentwide-width: var(--alignwide-width);
+  }
+}

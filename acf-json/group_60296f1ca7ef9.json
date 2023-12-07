@@ -1,0 +1,51 @@
+{
+    "key": "group_60296f1ca7ef9",
+    "title": "Schema.org",
+    "fields": [
+        {
+            "key": "field_60296f3b80426",
+            "label": "FAQ page",
+            "name": "schema_org_is_faq_page",
+            "type": "true_false",
+            "instructions": "Check this to set the main content to be https:\/\/schema.org\/FAQPage.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This is a FAQ page",
+            "default_value": 0,
+            "ui": 0,
+            "translations": "copy_once",
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1613328534
+}

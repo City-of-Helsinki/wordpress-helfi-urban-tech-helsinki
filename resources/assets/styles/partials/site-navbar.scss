@@ -1,0 +1,38 @@
+.site-navbar {
+  margin-top: 20px;
+  border-top: 3px solid black;
+  display: none;
+  width: 100%;
+  background-color: $color-white;
+  z-index: 100;
+  transition: transform 200ms ease-out;
+
+  &.is-expanded {
+    display: block;
+    animation: slide-in 1s ease-out;
+  }
+
+  @include mq($from: large) {
+    display: flex;
+    align-items: flex-end;
+    width: auto;
+    margin-top: 0;
+    border-top: 0;
+
+    &.is-expanded {
+      display: flex;
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  90% {
+    opacity: 1;
+    max-height: 100vh;
+  }
+}

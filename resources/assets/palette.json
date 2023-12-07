@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Black",
+    "slug": "black",
+    "color": "#000000"
+  },
+  {
+    "name": "White",
+    "slug": "white",
+    "color": "#ffffff"
+  },
+  {
+    "name": "liliac",
+    "slug": "liliac",
+    "color": "#c491fe"
+  },
+  {
+    "name": "brightlightblue",
+    "slug": "brightlightblue",
+    "color": "#30e0ff"
+  },
+  {
+    "name": "orangish",
+    "slug": "orangish",
+    "color": "#ff8547"
+  },
+  {
+    "name": "weirdgreen",
+    "slug": "weirdgreen",
+    "color": "#43d09d"
+  },
+  {
+    "name": "bubblegumpink",
+    "slug": "bubblegumpink",
+    "color": "#ff99e5"
+  },
+  {
+    "name": "lightblue",
+    "slug": "lightblue",
+    "color": "#6dcff6"
+  },
+  {
+    "name": "sunfloweryellow",
+    "slug": "sunfloweryellow",
+    "color": "#ffe400"
+  },
+  {
+    "name": "greyishbrown",
+    "slug": "greyishbrown",
+    "color": "#3c3c3c"
+  }
+]

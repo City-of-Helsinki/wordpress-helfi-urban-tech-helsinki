@@ -1,0 +1,96 @@
+/**
+ * Global
+ */
+
+/**
+ * Block editor color palette utilities
+ * @see https://git.io/JeyD6
+ */
+@each $color-name, $color-value in $color-palette {
+  .has-#{$color-name}-background-color {
+    background-color: $color-value !important;
+  }
+}
+
+@each $color-name, $color-value in $color-palette {
+  .has-#{$color-name}-color {
+    color: $color-value !important;
+  }
+}
+
+.has-category-circular-economy-color {
+  color: #ff8547;
+}
+
+.has-category-smart-mobility-color {
+  color: #c491fe;
+}
+
+.has-category-urban-farming-color {
+  color: #43d09d;
+}
+
+.has-category-clean-energy-color {
+  color: #30e0ff;
+}
+
+.has-category-urban-development-color {
+  color: #ffe400;
+}
+
+.has-category-urban-wellbeing-color {
+  color: #ff99e5;
+}
+
+.has-category-circular-economy-background-color {
+  background-color: #ff8547;
+}
+
+.has-category-smart-mobility-background-color {
+  background-color: #c491fe;
+}
+
+.has-category-urban-farming-background-color {
+  background-color: #43d09d;
+}
+
+.has-category-clean-energy-background-color {
+  background-color: #30e0ff;
+}
+
+.has-category-urban-development-background-color {
+  background-color: #ffe400;
+}
+
+.has-category-urban-wellbeing-background-color {
+  background-color: #ff99e5;
+}
+
+// Remove empty trailing paragraphs.
+p:empty:last-child {
+  display: none;
+}
+
+// Remove trailing space below last paragraph in a container
+p:last-child {
+  margin-bottom: 0;
+}
+
+// Dimmed backgrounds are assumed to be dark by default.
+.has-background-dim:not(.has-background) {
+  color: $color-white;
+}
+
+@if $is-frontend {
+  .is-mobile-only {
+    @include mq($from: medium) {
+      display: none;
+    }
+  }
+
+  .is-desktop-only {
+    @include mq($until: medium) {
+      display: none !important;
+    }
+  }
+}

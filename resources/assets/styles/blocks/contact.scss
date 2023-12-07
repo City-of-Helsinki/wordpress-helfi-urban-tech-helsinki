@@ -1,0 +1,26 @@
+.wp-block-contact {
+  @include mq($from: large) {
+    &.has-multiple-contacts {
+      display: flex;
+      flex-wrap: wrap;
+
+      > * {
+        flex-basis: 50%;
+      }
+
+      .wp-block-media-text {
+        .wp-block-media-text__content {
+          padding: 64px 15px 64px 15px;
+
+          > * {
+            max-width: unset;
+          }
+        }
+
+        .wp-block-media-text__media {
+          min-height: unset;
+        }
+      }
+    }
+  }
+}

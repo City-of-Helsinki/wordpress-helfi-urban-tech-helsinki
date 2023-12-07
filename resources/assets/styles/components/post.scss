@@ -1,0 +1,22 @@
+.post {
+  .entry-content {
+    > *:not(.alignfull) {
+      margin-right: 15px;
+      margin-left: 15px;
+
+      @include mq($from: large) {
+        margin-right: 40px;
+        margin-left: 40px;
+      }
+    }
+
+    .author {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .post-contacts {
+    margin-top: 40px;
+  }
+}

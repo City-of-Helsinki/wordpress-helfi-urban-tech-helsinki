@@ -1,0 +1,317 @@
+/* stylelint-disable color-hex-length */
+
+// // 1. Global
+// // ---------
+
+$breakpoint-xs: 320px;
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-l: 992px;
+$breakpoint-xl: 1248px;
+$container-width-xs: 288px;
+$container-width-s: 544px;
+$container-width-m: 720px;
+$container-width-l: 944px;
+$container-width-xl: 1200px;
+// $color-brick: #bd2719;
+// $color-brick-light: #ffeeed;
+// $color-brick-medium-light: #facbc8;
+// $color-brick-dark: #800e04;
+// $color-bus: #0000bf;
+// $color-bus-light: #f0f0ff;
+// $color-bus-medium-light: #ccccff;
+// $color-bus-dark: #00005e;
+// $color-coat-of-arms: #0072c6;
+// $color-coat-of-arms-light: #e6f4ff;
+// $color-coat-of-arms-medium-light: #b5daf7;
+// $color-coat-of-arms-dark: #005799;
+// $color-copper: #00d7a7;
+// $color-copper-light: #cffaf1;
+// $color-copper-medium-light: #9ef0de;
+// $color-copper-dark: #00a17d;
+// $color-engel: #ffe977;
+// $color-engel-light: #fff9db;
+// $color-engel-medium-light: #fff3b8;
+// $color-engel-dark: #dbc030;
+// $color-fog: #9fc9eb;
+// $color-fog-light: #e8f3fc;
+// $color-fog-medium-light: #d0e6f7;
+// $color-fog-dark: #72a5cf;
+// $color-gold: #c2a251;
+// $color-gold-light: #f7f2e4;
+// $color-gold-medium-light: #e8d7a7;
+// $color-gold-dark: #9e823c;
+// $color-metro: #fd4f00;
+// $color-metro-light: #ffeee6;
+// $color-metro-medium-light: #ffcab3;
+// $color-metro-dark: #bd2f00;
+// $color-silver: #dedfe1;
+// $color-silver-light: #f7f7f8;
+// $color-silver-medium-light: #efeff0;
+// $color-silver-dark: #b0b8bf;
+// $color-summer: #ffc61e;
+// $color-summer-light: #fff4d4;
+// $color-summer-medium-light: #ffe49c;
+// $color-summer-dark: #cc9200;
+// $color-suomenlinna: #f5a3c7;
+// $color-suomenlinna-light: #fff0f7;
+// $color-suomenlinna-medium-light: #ffdbeb;
+// $color-suomenlinna-dark: #e673a5;
+// $color-tram: #009246;
+// $color-tram-light: #dff7eb;
+// $color-tram-medium-light: #a3e3c2;
+// $color-tram-dark: #006631;
+// $color-black-5: #f1f1f1;
+// rgba($color-black, 10%): #e5e5e5;
+// $color-black-20: #cccccc;
+// $color-black-30: #b2b2b2;
+// $color-black-40: #999898;
+// $color-black-50: #808080;
+// $color-black-60: #666666;
+// $color-black-70: #4c4c4c;
+// $color-black-80: #333333;
+// $color-black-90: #1a1a1a;
+// $color-error: #b01038;
+// $color-error-light: #f6e2e6;
+// $color-error-dark: #8d0d2d;
+// $color-success: #007a64;
+// $color-success-light: #e2f5f3;
+// $color-success-dark: #006250;
+// $color-alert: #ffda07;
+// $color-alert-light: #fff4b4;
+// $color-alert-dark: #d18200;
+// $color-info: #0062b9;
+// $color-info-light: #e5eff8;
+// $color-info-dark: #004f94;
+$spacing-layout-2-xs: 1rem; // 16px
+$spacing-layout-xs: 1.5rem; // 24px
+$spacing-layout-s: 2rem; // 32px
+$spacing-layout-m: 3rem; // 48px
+$spacing-layout-l: 4rem; // 64px
+$spacing-layout-xl: 6rem; // 96px
+$spacing-layout-2-xl: 8rem; // 128px
+$spacing-4-xs: 0.125rem; // 2px
+$spacing-3-xs: 0.25rem; // 4px
+$spacing-2-xs: 0.5rem; // 8px
+$spacing-xs: 0.75rem; // 12px
+$spacing-s: 1rem; // 16px
+$spacing-m: 1.5rem; // 24px
+$spacing-l: 2rem; // 32px
+$spacing-xl: 2.5rem; // 40px
+$spacing-2-xl: 3rem; // 48px
+$spacing-3-xl: 3.5rem; // 56px
+$spacing-4-xl: 4rem; // 64px
+$spacing-5-xl: 4.5rem; // 72px
+$fontsize-body-s: 0.875rem; // 14px
+$fontsize-body-m: 1rem; // 16px
+$fontsize-body-l: 1.125rem; // 18px
+$fontsize-body-xl: 1.25rem; // 20px
+$lineheight-s: 1;
+$lineheight-m: 1.2;
+$lineheight-l: 1.5;
+$lineheight-xl: 1.75;
+
+$color-black: #000000;
+$color-white: #ffffff;
+$color-liliac: #c491fe;
+$color-brightlightblue: #30e0ff;
+$color-orangish: #ff8547;
+$color-weirdgreen: #43d09d;
+$color-bubblegumpink: #ff99e5;
+$color-lightblue: #6dcff6;
+$color-sunfloweryellow: #ffe400;
+$color-greyishbrown: #3c3c3c;
+
+$font-default: 'Poppins', sans-serif;
+$font-heading: 'BebasNeue', serif;
+
+$fontsize-heading-1: 120px;
+$fontsize-heading-1-mobile: 70px;
+$lineheight-heading-1: 97px;
+$lineheight-heading-1-mobile: 57px;
+
+$fontsize-heading-2: 57px;
+$fontsize-heading-2-mobile: 51px;
+$lineheight-heading-2: 48px;
+$lineheight-heading-2-mobile: 43px;
+
+$fontsize-heading-3: 40px;
+$fontsize-heading-3-mobile: 36px;
+$lineheight-heading-3: 34px;
+$lineheight-heading-3-mobile: 30px;
+
+$fontsize-heading-4: 24px;
+$fontsize-heading-5: 20px;
+$fontsize-heading-6: 18px;
+
+$fontsize-body: 18px;
+$fontsize-body-mobile: 16px;
+$letterspacing-body: -0.51px;
+$lineheight-body: 20px;
+$lineheight-body-mobile: 18px;
+
+$fontsize-article-title: 80.4px;
+$lineheight-article-title: 65px;
+$letterspacing-article-title: -2.3px;
+
+$fontsize-article-title-mobile: 57px;
+$lineheight-article-title-mobile: 46.2px;
+$letterspacing-article-title-mobile: -1.6px;
+
+$spacing-10: 10px;
+$spacing-15: 15px;
+$spacing-25: 25px;
+
+$is-frontend: true;
+
+$block-paddings: (
+  small: 15px,
+  medium: 30px
+);
+
+$block-margins: (
+  small: $spacing-15,
+  medium: $spacing-15
+);
+
+// @todo we need to fix the grid
+$container-margins: (
+  small: 20px,
+  medium: 30px
+);
+
+$color-palette: (
+  'black': $color-black,
+  'white': $color-white,
+  'liliac': $color-liliac,
+  'brightlightblue': $color-brightlightblue,
+  'orangish': $color-orangish,
+  'weirdgreen': $color-weirdgreen,
+  'bubblegumpink': $color-bubblegumpink,
+  'lightblue': $color-lightblue,
+  'sunfloweryellow': $color-sunfloweryellow,
+  'greyishbrown': $color-greyishbrown,
+);
+
+$font-sizes: (
+  small: $fontsize-body-s,
+  medium: $fontsize-body-m,
+  large: $fontsize-body-xl,
+);
+
+$primary-color: map-get($color-palette, 'primary');
+$global-font-size: $fontsize-body;
+$global-width: 1200px;
+$content-width-max: 674px;
+
+$mq-breakpoints: (
+  xsmall: $breakpoint-xs,
+  small: $breakpoint-s,
+  medium: $breakpoint-m,
+  large: $breakpoint-l,
+  xlarge: $breakpoint-xl,
+);
+
+$footer-koro-height: 25px;
+
+// From legacy HDS
+
+$color-background-button-primary-default: #0000bf;
+$color-background-button-primary-hover: #000098;
+$color-background-button-primary-focus: #0000bf;
+$color-background-button-primary-hover-focus: #000098;
+$color-background-button-primary-disabled: #cccccc;
+$color-background-button-secondary-default: rgba(0, 0, 0, 0);
+$color-background-button-secondary-hover: #f2f2fc;
+$color-background-button-secondary-focus: rgba(0, 0, 0, 0);
+$color-background-button-secondary-hover-focus: #f2f2fc;
+$color-background-button-secondary-disabled: rgba(0, 0, 0, 0);
+$color-background-button-supplementary-default: rgba(0, 0, 0, 0);
+$color-background-button-supplementary-hover: #f2f2fc;
+$color-background-button-supplementary-focus: rgba(0, 0, 0, 0);
+$color-background-button-supplementary-hover-focus: #f2f2fc;
+$color-background-button-supplementary-disabled: rgba(0, 0, 0, 0);
+$color-background-checkbox-unselected: rgba(0, 0, 0, 0);
+$color-background-checkbox-selected: #0000bf;
+$color-background-checkbox-hover: #000098;
+$color-background-checkbox-disabled: #e5e5e5;
+$color-background-radio-button-default: #ffffff;
+$color-background-radio-button-hover: #ffffff;
+$color-background-radio-button-focus: #ffffff;
+$color-background-radio-button-unselected-disabled: #e5e5e5;
+$color-background-radio-button-selected-disabled: #ffffff;
+$color-background-text-input-default: #ffffff;
+$color-background-text-input-disabled: #e5e5e5;
+$color-border-button-primary-default: #0000bf;
+$color-border-button-primary-hover: #000098;
+$color-border-button-primary-focus: #0000bf;
+$color-border-button-primary-hover-focus: #000098;
+$color-border-button-primary-disabled: #cccccc;
+$color-border-button-secondary-default: #0000bf;
+$color-border-button-secondary-hover: #000098;
+$color-border-button-secondary-focus: #0000bf;
+$color-border-button-secondary-hover-focus: #000098;
+$color-border-button-secondary-disabled: #808080;
+$color-border-button-supplementary-default: rgba(0, 0, 0, 0);
+$color-border-button-supplementary-hover: rgba(0, 0, 0, 0);
+$color-border-button-supplementary-focus: #0072c6;
+$color-border-button-supplementary-hover-focus: #0072c6;
+$color-border-button-supplementary-disabled: rgba(0, 0, 0, 0);
+$color-border-checkbox-selected: #0000bf;
+$color-border-checkbox-selected-hover: #000098;
+$color-border-checkbox-selected-focus: #0000bf;
+$color-border-checkbox-unselected: #808080;
+$color-border-checkbox-unselected-hover: #1a1a1a;
+$color-border-checkbox-unselected-focus: #000000;
+$color-border-checkbox-disabled: #e5e5e5;
+$color-border-radio-button-focus: #1a1a1a;
+$color-border-radio-button-selected: #0000bf;
+$color-border-radio-button-selected-hover: #000098;
+$color-border-radio-button-selected-disabled: #cccccc;
+$color-border-radio-button-unselected: #808080;
+$color-border-radio-button-unselected-hover: #1a1a1a;
+$color-border-radio-button-unselected-disabled: #e5e5e5;
+$color-border-text-input-default: #808080;
+$color-border-text-input-hover: #1a1a1a;
+$color-border-text-input-focus: #1a1a1a;
+$color-border-text-input-invalid: #b01038;
+$color-border-text-input-disabled: #e5e5e5;
+$color-focus-outline-button-primary: #0072c6;
+$color-focus-outline-button-secondary: #0072c6;
+$color-focus-outline-button-supplementary: rgba(0, 0, 0, 0);
+$color-focus-outline-checkbox-default: #0072c6;
+$color-focus-outline-radio-button-default: #0072c6;
+$color-focus-outline-text-input-default: #0072c6;
+$color-label-button-primary-default: #ffffff;
+$color-label-button-primary-hover: #ffffff;
+$color-label-button-primary-focus: #ffffff;
+$color-label-button-primary-hover-focus: #ffffff;
+$color-label-button-primary-disabled: #ffffff;
+$color-label-button-secondary-default: #0000bf;
+$color-label-button-secondary-hover: #000098;
+$color-label-button-secondary-focus: #0000bf;
+$color-label-button-secondary-hover-focus: #000098;
+$color-label-button-secondary-disabled: #999898;
+$color-label-button-supplementary-default: #0000bf;
+$color-label-button-supplementary-hover: #000098;
+$color-label-button-supplementary-focus: #0000bf;
+$color-label-button-supplementary-hover-focus: #000098;
+$color-label-button-supplementary-disabled: #999898;
+$color-label-checkbox-default: #1a1a1a;
+$color-label-checkbox-disabled: #999898;
+$color-label-radio-button-default: #1a1a1a;
+$color-label-radio-button-disabled: #999898;
+$color-label-text-input-default: #1a1a1a; // input label text color
+$color-label-text-input-invalid: #1a1a1a; // invalid input label text color
+$color-icon-checkbox-selected: #ffffff;
+$color-icon-checkbox-unselected: rgba(0, 0, 0, 0);
+$color-icon-checkbox-disabled: #ffffff;
+$color-icon-radio-button-selected: #0000bf;
+$color-icon-radio-button-unselected: rgba(0, 0, 0, 0);
+$color-icon-radio-button-hover: #000098;
+$color-icon-radio-button-disabled: #e5e5e5;
+$color-icon-text-input-invalid: #b01038;
+$color-helper-text-input-default: #666666; // input helper text color
+$color-helper-text-input-invalid: #b01038; // invalid input helper text color
+$color-input-text-input-default: #1a1a1a; // input field text color
+$color-input-text-input-disabled: #999898; // disabled input field text color

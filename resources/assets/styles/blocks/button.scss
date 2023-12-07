@@ -1,0 +1,131 @@
+/**
+ * Button
+ */
+
+.wp-block-button {
+  border-radius: 0;
+  // Workaround for background slider not working in some contexts.
+  z-index: 0;
+
+  &.is-style-outline {
+    background: transparent;
+
+    .wp-block-button__link {
+      border-color: currentColor;
+    }
+  }
+
+  &.is-style-outline {
+    .wp-block-button__link {
+      &:not(.has-text-color) {
+        color: $color-black;
+      }
+    }
+  }
+
+  &.is-style-text {
+    background: transparent;
+
+    .wp-block-button__link {
+      border: 2px solid transparent;
+      background: transparent;
+
+      &:hover {
+        border-color: transparent;
+      }
+
+      &:not(.has-text-color) {
+        color: $color-black;
+      }
+
+      &.has-black-background-color:not(.has-text-color) {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 0;
+    padding: 6px 10px;
+    font-weight: bold;
+    overflow: hidden;
+    transition: color 0.25s ease-in-out,
+      border-color 0.25s ease-in-out;
+    font-size: $fontsize-body;
+    line-height: $lineheight-body;
+
+    &:focus {
+      outline: solid 3px currentColor;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::before {
+      content: '';
+      margin-right: auto;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: white;
+      z-index: -1;
+      pointer-events: none;
+      transition: left 0.25s ease-in-out;
+    }
+
+    &:hover::before {
+      left: 0;
+    }
+
+    &.has-white-color {
+      &::before {
+        background: white;
+      }
+
+      &:hover {
+        color: black !important;
+        border-color: white;
+      }
+    }
+
+    &:not(.has-text-color),
+    &.has-black-color { // black color
+      &::before {
+        background: black;
+      }
+
+      &:hover {
+        color: white !important;
+        border-color: black;
+      }
+    }
+
+    // Special workaround for buttons with black background. The background is
+    // made transparent and the slider slides off to the right instead.
+    &.has-black-background-color {
+      background-color: transparent !important;
+      color: white !important;
+
+      &::before {
+        left: 0;
+      }
+
+      &:hover {
+        background: transparent !important;
+        color: black !important;
+
+        &::before {
+          left: 100%;
+        }
+      }
+    }
+  }
+}

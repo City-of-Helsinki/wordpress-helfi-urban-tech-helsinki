@@ -1,0 +1,33 @@
+.wp-block-pullquote {
+  border-top: solid 2px currentColor;
+  border-bottom: solid 2px currentColor;
+  min-width: 200px;
+
+  &.alignleft,
+  &.alignright {
+    max-width: $content-width-max;
+
+    > blockquote {
+      padding: $spacing-s $spacing-m;
+    }
+  }
+
+  > blockquote {
+    // override foundation
+    margin-bottom: 0;
+  }
+
+  blockquote cite {
+    color: inherit;
+  }
+
+  @if not $is-frontend {
+    @at-root {
+      // This is added on front-end but for some reason not back-end.
+      [data-align="left"] .editor-block-list__block-edit,
+      [data-align="right"] .editor-block-list__block-edit {
+        max-width: 305px;
+      }
+    }
+  }
+}

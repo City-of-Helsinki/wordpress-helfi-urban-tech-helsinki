@@ -1,0 +1,39 @@
+.wp-block-quote {
+  // @todo Gutenberg bug
+  border: none;
+  position: relative;
+  padding-left: 0;
+
+  &::before {
+    content: '“';
+    font-size: 100px;
+    line-height: 1;
+    color: blue;
+    display: block;
+    position: absolute;
+    top: -$spacing-2-xs;
+  }
+
+  p {
+    margin-left: $spacing-3-xl;
+    margin-bottom: $spacing-2-xs;
+    font-size: inherit;
+  }
+
+  cite {
+    margin-top: 0;
+    margin-left: $spacing-3-xl;
+    font-size: $fontsize-body-l;
+    line-height: $lineheight-xl;
+    color: $color-black;
+
+    &::before {
+      content: ' - ';
+    }
+  }
+
+  &.is-style-large {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

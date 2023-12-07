@@ -1,0 +1,157 @@
+.entry-content {
+  font-size: $fontsize-body-mobile;
+  line-height: $lineheight-body-mobile;
+  letter-spacing: $letterspacing-body;
+
+  > .wp-block-group {
+    margin-left: 0;
+  }
+
+  @include mq($from: medium) {
+    font-size: $fontsize-body;
+    line-height: $lineheight-body;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > * {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include ie11 {
+      max-width: $content-width-max;
+    }
+  }
+
+  .alignwide {
+    max-width: var(--alignwide-width);
+
+    @include ie11 {
+      max-width: 90%;
+    }
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > .alignfull {
+    max-width: none;
+  }
+
+  > :last-child {
+    // If the last child has no background, add some margin to it so that the
+    // footer's koro effect does not overlap the block's content. This also
+    // overrides the default behavior of not having bottom margin on the last
+    // block.
+    margin-bottom: calc(#{$spacing-2-xl} + #{$footer-koro-height});
+    @include breakpoint-value($block-margins) {
+      $margin: $-bp-value;
+
+      margin-bottom: calc(#{$margin} + #{$footer-koro-height});
+    }
+  }
+
+  > :last-child.has-background.alignfull {
+    // If the last child has a background and is full-aligned, override the
+    // above by adding more bottom padding to it so that the background extends
+    // to show under the footer's koro effect, without overlapping the block's
+    // content.
+    margin-bottom: 0;
+    padding-bottom: calc(#{$spacing-2-xl} + #{$footer-koro-height} + 25px);
+
+    @include breakpoint-value($block-paddings) {
+      $padding: $-bp-value;
+
+      padding-bottom: calc(#{$padding} + #{$footer-koro-height} + 25px);
+    }
+  }
+
+  > h1:first-child {
+    margin-top: $spacing-m;
+  }
+}
+
+.entry-header {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  > .wp-block-group {
+    max-width: var(--content-width);
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @include mq($from: large) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  .wp-block-image {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .archive &,
+  .post.type-post &,
+  .page.type-page & {
+    position: relative;
+    max-width: none;
+
+    #breadcrumbs {
+      font-size: $fontsize-body-s;
+
+      @include mq($from: large) {
+        position: absolute;
+        top: $spacing-xl;
+      }
+    }
+
+    #breadcrumbs + * {
+      margin-top: 0;
+    }
+
+    figcaption {
+      margin-bottom: 0;
+      font-style: italic;
+      text-align: right;
+      color: $color-black;
+    }
+
+    @include mq($from: large) {
+      .wp-block-group.has-background {
+        padding-top: 110px;
+        padding-bottom: 110px;
+      }
+    }
+  }
+}
+
+.entry-meta {
+  margin-bottom: 15px;
+  text-align: left;
+  font-family: $font-default;
+  text-transform: uppercase;
+
+  .category {
+    margin-right: 20px;
+    font-weight: bold;
+  }
+}
+
+.entry-title {
+  margin-bottom: 15px !important;
+  font-size: 80px;
+  line-height: 65px;
+  letter-spacing: -2.28px;
+}

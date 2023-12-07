@@ -1,0 +1,44 @@
+// Align float at same viewport width as WP core.
+@media (min-width: 640px) {
+  .alignleft {
+    padding: 0;
+
+    > *:first-child {
+      float: left;
+      background-color: inherit;
+
+      // Increase specificty to override core pullquote with background
+      &:first-child {
+        margin-right: $spacing-m;
+      }
+    }
+
+    > *:last-child {
+      margin-bottom: $spacing-m;
+    }
+  }
+
+  .alignright {
+    padding: 0;
+
+    > *:first-child {
+      float: right;
+      background-color: inherit;
+
+      // Increase specificty to override core pullquote with background
+      &:first-child {
+        margin-left: $spacing-m;
+      }
+    }
+
+    > *:last-child {
+      margin-bottom: $spacing-m;
+    }
+  }
+}
+
+.alignleft:only-child,
+.alignright:only-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}

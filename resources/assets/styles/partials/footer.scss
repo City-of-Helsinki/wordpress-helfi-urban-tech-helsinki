@@ -1,0 +1,74 @@
+.content-info {
+  position: relative;
+  padding: 15px;
+  background-color: black;
+  color: white;
+
+  @include mq($from: medium) {
+    padding: 30px;
+  }
+
+  .footer {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__logos {
+      text-align: center;
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      img {
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 52px;
+
+        @include mq($from: medium) {
+          height: 57px;
+        }
+      }
+    }
+
+    &__social {
+      margin-top: 30px;
+      text-align: center;
+
+      img {
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__fineprint {
+      > section > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+        text-align: center;
+
+        > * {
+          margin-left: 2.5px;
+          margin-right: 2.5px;
+        }
+      }
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+}

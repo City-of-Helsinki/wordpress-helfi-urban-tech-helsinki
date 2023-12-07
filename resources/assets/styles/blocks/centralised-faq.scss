@@ -1,0 +1,56 @@
+.accordion-item {
+  padding: 12px 0;
+  border-top: 2px solid black;
+
+  &:last-child {
+    border-bottom: 2px solid black;
+  }
+
+  .accordion-header {
+    &:not(:has(button.active)){
+      margin-bottom: 0;
+    }
+  }
+
+  .accordion-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+
+    .accordion-icon {
+      margin-right: 1px;
+      transition: all 0.3s ease-out;
+    }
+
+    &.active {
+      .accordion-icon {
+        transform: rotate(0.5turn);
+        transition: all 0.3s ease-out;
+      }
+    }
+  }
+
+  .accordion-panel {
+    max-height: fit-content;
+    transition: all 1s ease-in-out;
+
+    .accordion-body {
+      padding: 0 0 8px;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+}

@@ -1,0 +1,57 @@
+/* stylelint-disable declaration-empty-line-before */
+
+$fonts-dir: '../fonts';
+
+/* Webfont: BebasNeue-Regular */
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('#{$fonts-dir}/BebasNeue-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Poppins-Regular */
+@font-face {
+  font-family: 'Poppins';
+  src: url('#{$fonts-dir}/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Poppins-RegularItalic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('#{$fonts-dir}/Poppins-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Poppins-Bold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('#{$fonts-dir}/Poppins-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Poppins-Medium */
+@font-face {
+  font-family: 'Poppins';
+  src: url('#{$fonts-dir}/Poppins-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Poppins-BoldItalic */
+@font-face {
+  font-family: 'Poppins';
+  src: url('#{$fonts-dir}/Poppins-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}

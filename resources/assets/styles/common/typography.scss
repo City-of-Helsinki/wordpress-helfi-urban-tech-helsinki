@@ -1,0 +1,173 @@
+body {
+  font-family: $font-default;
+  font-size: $fontsize-body-mobile;
+  line-height: $lineheight-body-mobile;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mq($from: large) {
+    font-size: $fontsize-body;
+    line-height: $lineheight-body;
+  }
+}
+
+.highlight {
+  display: inline;
+
+  a:hover & {
+    background: inherit;
+  }
+}
+
+@each $color-name, $color-value in $color-palette {
+  [data-color=#{$color-name}].highlight {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 10%,
+      $color-value 10%,
+      $color-value 80%,
+      transparent 80%
+    );
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: normal;
+  margin-block-start: 0;
+  margin-block-end: $spacing-15;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  // increase specificity to override inline editor styles
+  @if not $is-frontend {
+    :root & {
+      margin-top: 0;
+      margin-bottom: $spacing-15;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 10%,
+        $color-lightblue 10%,
+        $color-lightblue 80%,
+        transparent 80%
+      );
+    }
+  }
+}
+
+h1,
+.is-style-size-h1 {
+  font-size: $fontsize-heading-1-mobile;
+  line-height: $lineheight-heading-1-mobile;
+
+  @include mq($from: large) {
+    font-size: $fontsize-heading-1;
+    line-height: $lineheight-heading-1;
+  }
+}
+
+h2,
+.is-style-size-h2 {
+  font-size: $fontsize-heading-2-mobile;
+  line-height: $lineheight-heading-2-mobile;
+
+  @include mq($from: large) {
+    font-size: $fontsize-heading-2;
+    line-height: $lineheight-heading-2;
+  }
+}
+
+h3,
+.is-style-size-h3 {
+  font-size: $fontsize-heading-3-mobile;
+  line-height: $lineheight-heading-3-mobile;
+
+  @include mq($from: large) {
+    font-size: $fontsize-heading-3;
+    line-height: $lineheight-heading-3;
+  }
+}
+
+h4,
+.is-style-size-h4 {
+  font-size: $fontsize-heading-4;
+}
+
+h5,
+.is-style-size-h5 {
+  font-size: $fontsize-heading-5;
+}
+
+h6,
+.is-style-size-h6 {
+  font-size: $fontsize-heading-6;
+}
+
+.is-style-article-title {
+  font-size: $fontsize-article-title-mobile;
+  line-height: $lineheight-article-title-mobile;
+  letter-spacing: $letterspacing-article-title-mobile;
+
+  @include mq($from: large) {
+    font-size: $fontsize-article-title;
+  line-height: $lineheight-article-title;
+  letter-spacing: $letterspacing-article-title;
+  }
+}
+
+blockquote {
+  font-size: 22px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: $spacing-25;
+
+  &.description {
+    font-weight: bold;
+
+    &--light {
+      font-weight: normal;
+      font-size: inherit;
+    }
+  }
+}
+
+@each $size-name, $size-value in $font-sizes {
+  .has-#{$size-name}-font-size {
+    font-size: $size-value !important;
+  }
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: auto 3px currentColor;
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,81 @@
+.wp-block-column {
+  padding: 30px;
+  margin-bottom: 0 !important;
+  flex-basis: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  // column blocks can contain other aligned blocks.
+  .alignwide,
+  .alignfull {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &:not(:first-child) {
+    margin-left: 0 !important;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  // On mobile stacked columns need gutters.
+  // Note breakpoint is taken from wp core.
+  @media (min-width: 600px) {
+    &:empty {
+      display: block;
+    }
+  }
+
+  // Show two columns instead of one on 480px+ mobile, and use 50% width instead
+  // of the default since we've removed margins.
+  @media (min-width: 480px) and (max-width: 781px) {
+    &:not(:only-child) {
+      flex-basis: 50% !important;
+    }
+  }
+}
+
+.wp-block-columns.is-style-partner-grid,
+.wp-block-columns.is-style-startup-grid {
+  .wp-block-column {
+    position: relative;
+
+    @include mq($until: medium) {
+      flex-basis: 100% !important;
+    }
+
+    p:first-child {
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 480px;
+    }
+  }
+}
+
+.wp-block-columns.is-style-startup-grid {
+  .wp-block-column {
+    padding-bottom: 80px;
+
+    @include mq($from: 350px) {
+      .wp-block-buttons {
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        margin-bottom: 0;
+      }
+
+      p.category-name {
+        position: absolute;
+        margin-bottom: 0;
+        right: 30px;
+        bottom: 30px;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}

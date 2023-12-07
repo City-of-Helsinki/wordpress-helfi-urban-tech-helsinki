@@ -1,0 +1,42 @@
+.site-header {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include mq($from: large) {
+    width: auto;
+  }
+
+  &__logo {
+    flex-grow: 1;
+    margin-right: $spacing-m;
+
+    @include mq($from: large) {
+      flex-grow: 0;
+    }
+
+    img {
+      min-width: 100px;
+      width: auto;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    @include mq($from: large) {
+      img {
+        width: auto;
+        height: 115px;
+      }
+    }
+  }
+
+  &__hamburger-button {
+    display: block;
+
+    @include mq($from: large) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+/**
+ * Editor
+ */
+
+@import '~sass-mq';
+
+@import 'config/variables';
+@import 'config/external';
+@import 'config/container';
+
+@import 'common/utils';
+@import 'common/fonts';
+@import 'common/foundation';
+@import 'common/spacing';
+
+// Disable frontend specific styles.
+$is-frontend: false;
+
+.wp-block {
+  // Set our own default content width
+  max-width: var(--content-width);
+
+  // Set our own alignwide size
+  &.alignwide,
+  &[data-align=wide] {
+    max-width: var(--alignwide-width);
+  }
+}
+
+.wp-block.is-reusable {
+  max-width: unset;
+}
+
+@include mq($from: large) {
+  // Remove gutter to make widths match exactly
+  .editor-styles-wrapper.editor-styles-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.editor-styles-wrapper > * {
+  font-size: $fontsize-body-l;
+  font-family: $font-default;
+
+  // Style page title
+  .edit-post-visual-editor__post-title-wrapper {
+    font-family: inherit;
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    .wp-block {
+      margin-left: 0;
+    }
+  }
+
+  // Disable links rendered in ACF blocks
+  .acf-block-preview a[href]:not([href^="#"]) {
+    pointer-events: none;
+  }
+
+  @import 'common/global';
+  @import 'common/typography';
+  @import 'components';
+  @import 'blocks';
+}

@@ -1,0 +1,42 @@
+.teaser {
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+    }
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 300 / 384 * 100%;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--placeholder {
+      // @todo Placeholder styles need to be defined and implemented.
+      background-color: rgba($color-black, 10%);
+    }
+  }
+
+  &__thumbnail + .teaser__content {
+    margin-top: $spacing-layout-xs;
+  }
+
+  &__title {
+    font-size: $fontsize-heading-3;
+    line-height: $lineheight-m;
+    margin: 0;
+    text-align: left;
+  }
+}
