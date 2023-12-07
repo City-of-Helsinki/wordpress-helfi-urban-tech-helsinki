@@ -10,7 +10,7 @@ class Contact extends Block
   public $mode = 'auto';
   public function with() {
     return [
-      'contacts' => get_field('contacts'),
+      'contacts' => is_array(get_field('contacts')) ? get_field('contacts') : [],
     ];
   }
 
