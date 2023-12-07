@@ -9,6 +9,7 @@ class EmptySquare extends Block
   public $name = 'Empty Square';
   public function with()
   {
+      return [];
   }
 
   public function fields()
