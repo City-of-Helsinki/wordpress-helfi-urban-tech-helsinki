@@ -43,7 +43,7 @@
       'block' => (object) [
         'classes' => 'wp-block-contact alignfull',
       ],
-      'contacts' => get_field('contacts'),
+      'contacts' => is_array(get_field('contacts')) ? get_field('contacts') : [],
     ])
   </x-group>
 
