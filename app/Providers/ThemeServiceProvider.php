@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use Roots\Acorn\ServiceProvider;
+use Roots\Acorn\Sage\SageServiceProvider;
 
 use function Roots\view;
 
-class ThemeServiceProvider extends ServiceProvider
+class ThemeServiceProvider extends SageServiceProvider
 {
     /**
      * Register any application services.
@@ -15,7 +15,7 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        parent::register();
     }
 
     /**
@@ -25,6 +25,8 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        parent::boot();
+
         add_filter('searchwp_live_search_results_template', [$this, 'searchwpResultsTemplate']);
     }
 
