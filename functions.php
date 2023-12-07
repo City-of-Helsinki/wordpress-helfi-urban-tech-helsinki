@@ -11,11 +11,36 @@
 |
 */
 
-if (! file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
+if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
 require $composer;
+
+/*
+|--------------------------------------------------------------------------
+| Register The Bootloader
+|--------------------------------------------------------------------------
+|
+| The first thing we will do is schedule a new Acorn application container
+| to boot when WordPress is finished loading the theme. The application
+| serves as the "glue" for all the components of Laravel and is
+| the IoC container for the system binding all of the various parts.
+|
+*/
+
+if (! function_exists('\Roots\bootloader')) {
+    wp_die(
+        __('You need to install Acorn to use this theme.', 'sage'),
+        '',
+        [
+            'link_url' => 'https://roots.io/acorn/docs/installation/',
+            'link_text' => __('Acorn Docs: Installation', 'sage'),
+        ]
+    );
+}
+
+\Roots\bootloader()->boot();
 
 /*
 |--------------------------------------------------------------------------
@@ -31,38 +56,10 @@ require $composer;
 
 collect(['helpers', 'setup', 'filters', 'admin', 'yoast'])
     ->each(function ($file) {
-        $file = "app/{$file}.php";
-
-        if (! locate_template($file, true, true)) {
+        if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
+                /* translators: %s is replaced with the relative file path */
                 sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)
             );
         }
     });
-
-/*
-|--------------------------------------------------------------------------
-| Enable Sage Theme Support
-|--------------------------------------------------------------------------
-|
-| Once our theme files are registered and available for use, we are almost
-| ready to boot our application. But first, we need to signal to Acorn
-| that we will need to initialize the necessary service providers built in
-| for Sage when booting.
-|
-*/
-
-add_theme_support('sage');
-
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-|
-| We are ready to bootstrap the Acorn framework and get it ready for use.
-| Acorn will provide us support for Blade templating as well as the ability
-| to utilize the Laravel framework and its beautifully written packages.
-|
-*/
-
-new Roots\Acorn\Bootloader();
