@@ -9,6 +9,10 @@ namespace App;
 use function Roots\asset;
 use function Roots\base_path;
 
+add_filter('acorn/paths.storage', function ($path) {
+    return trailingslashit(ABSPATH).'.cache/sage/';
+  });
+
 /**
  * Register the theme assets.
  *
