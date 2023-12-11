@@ -26,9 +26,6 @@
       "homepage": "https://github.com/log1x"
     }
   ],
-  "keywords": [
-    "wordpress"
-  ],
   "support": {
     "issues": "https://github.com/roots/sage/issues",
     "forum": "https://discourse.roots.io/"
@@ -45,13 +42,6 @@
     "log1x/navi": "^2.0",
     "log1x/sage-svg": "^1.1",
     "roots/acorn": "^3.3"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "3.7.2"
-  },
-  "suggest": {
-    "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0).",
-    "log1x/sage-svg": "A useful SVG directive for inlining SVG's within Blade views (^1.0)."
   },
   "config": {
     "optimize-autoloader": true,
