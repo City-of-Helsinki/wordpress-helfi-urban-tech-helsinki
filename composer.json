@@ -37,7 +37,6 @@
   },
   "require": {
     "php": "^8.0",
-    "generoi/sage-nativeblock": "dev-master",
     "log1x/acf-composer": "^2.1",
     "log1x/navi": "^2.0",
     "log1x/sage-svg": "^1.1",
@@ -63,20 +62,6 @@
       "providers": [
         "App\\Providers\\ThemeServiceProvider"
       ]
-    }
-  },
-  "repositories": {
-    "sage-woocommerce": {
-      "type": "vcs",
-      "url": "https://github.com/generoi/sage-woocommerce"
-    },
-    "sage-nativeblock": {
-      "type": "vcs",
-      "url": "https://github.com/generoi/sage-nativeblock"
-    },
-    "sage-demo-content": {
-      "type": "vcs",
-      "url": "https://github.com/generoi/sage-demo-content"
     }
   }
 }
