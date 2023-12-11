@@ -11,7 +11,7 @@
 |
 */
 
-if (! file_exists($composer = ABSPATH.'/vendor/autoload.php')) {
+if (! file_exists($composer = trailingslashit(ABSPATH).'vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
