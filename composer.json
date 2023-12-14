@@ -42,7 +42,7 @@
     }
   ],
   "require": {
-    "generoi/sage-nativeblock": "^0.3.1",
+    "generoi/sage-nativeblock": "*",
     "log1x/acf-composer": "^2.1",
     "log1x/navi": "^2.0",
     "log1x/sage-svg": "^1.1",
