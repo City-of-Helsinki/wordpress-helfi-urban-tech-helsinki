@@ -78,8 +78,15 @@ add_action('enqueue_block_editor_assets', function () {
 
     wp_enqueue_script(
         'sage/editor.js',
-        asset('scripts/editor.js')->uri(),
-        ['sage/vendor.js'],
+        asset('scripts/admin/editor.js')->uri(),
+        array(
+            'wp-blocks',
+            'wp-element',
+            'wp-block-editor',
+    		'wp-rich-text',
+    		'wp-components',
+    		'wp-dom-ready',
+        ),
         $theme_version,
         array(
             'strategy' => 'defer',
