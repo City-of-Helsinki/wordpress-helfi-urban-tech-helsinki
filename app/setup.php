@@ -13,24 +13,52 @@ add_filter('acorn/paths.storage', function ($path) {
     return trailingslashit(ABSPATH).'.cache/sage/';
   });
 
+function assets_version(): string {
+    return (defined('WP_DEBUG') && WP_DEBUG)
+        ? (string) time()
+        : \wp_get_theme()->get( 'Version' );
+}
+
 /**
  * Register the theme assets.
  *
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), ['jquery'], null, true);
-    wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'jquery'], null, true);
-    wp_enqueue_script('accordion.js', asset('scripts/accordion.js')->uri(), [], null, true);
+    $theme_version = assets_version();
 
-    wp_add_inline_script('sage/vendor.js', asset('scripts/polyfill.js')->contents(), 'before');
-    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
+    wp_enqueue_script(
+        'sage/app.js',
+        asset('scripts/public/app.js')->uri(),
+        array(),
+        $theme_version,
+        array(
+            'strategy' => 'defer',
+            'in_footer' => true,
+        )
+    );
+
+    wp_enqueue_script(
+        'accordion.js',
+        asset('scripts/public/accordion.js')->uri(),
+        array(),
+        $theme_version,
+        array(
+            'strategy' => 'defer',
+            'in_footer' => true,
+        )
+    );
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
 
-    wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), ['wp-block-library'], null);
+    wp_enqueue_style(
+        'sage/app.css',
+        asset('styles/app.css')->uri(),
+        ['wp-block-library'],
+        $theme_version
+    );
 
     wp_localize_script('sage/app.js', 'Sage', [
         'locale' => get_locale(),
@@ -41,33 +69,37 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
- * Replace core jQuery with theme's jQuery.
- */
-add_action('wp_enqueue_scripts', function () {
-    wp_deregister_script('jquery');
-    wp_deregister_script('jquery-core');
-    wp_deregister_script('jquery-migrate');
-    wp_register_script('jquery', asset('scripts/jquery.js')->uri(), false, null, true);
-});
-
-/**
  * Register the theme assets with the block editor.
  *
  * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
-    $dir = get_template_directory();
+    $theme_version = assets_version();
 
-    if (file_exists($dir . '/dist/scripts/manifest.asset.php')) {
-        $manifest = include $dir . '/dist/scripts/manifest.asset.php';
+    wp_enqueue_script(
+        'sage/editor.js',
+        asset('scripts/admin/editor.js')->uri(),
+        array(
+            'wp-blocks',
+            'wp-element',
+            'wp-block-editor',
+    		'wp-rich-text',
+    		'wp-components',
+    		'wp-dom-ready',
+        ),
+        $theme_version,
+        array(
+            'strategy' => 'defer',
+            'in_footer' => true,
+        )
+    );
 
-        wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), $manifest['dependencies'], null, true);
-        wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), ['sage/vendor.js'], null, true);
-
-        wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
-    }
-
-    wp_enqueue_style('sage/editor.css', asset('styles/editor.css')->uri(), false, null);
+    wp_enqueue_style(
+        'sage/editor.css',
+        asset('styles/editor.css')->uri(),
+        array(),
+        $theme_version
+    );
 }, 100);
 
 /**
