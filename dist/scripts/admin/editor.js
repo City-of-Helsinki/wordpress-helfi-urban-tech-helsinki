@@ -1,6 +1,4 @@
 ((wp) => {
-
-  const {unregisterBlockStyle, registerBlockStyle} = wp.blocks;
   const {createElement, Fragment} = wp.element;
   const {RichTextToolbarButton} = wp.blockEditor;
   const {registerFormatType, applyFormat, toggleFormat} = wp.richText;
@@ -168,50 +166,52 @@
       return settings;
     }
   );
-
-  wp.domReady(() => {
-    unregisterBlockStyle('core/button', 'fill');
-    registerBlockStyle('core/button', {
-      name: 'outline',
-      label: 'Outline',
-      isDefault: true,
-    });
-    registerBlockStyle('core/button', {
-      name: 'text',
-      label: 'Text',
-      isDefault: true,
-    });
-    registerBlockStyle('core/media-text', {
-      name: 'wide',
-      label: 'Wide',
-      isDefault: false,
-    });
-    registerBlockStyle('core/columns', {
-      name: 'partner-grid',
-      label: 'Partner grid',
-      isDefault: false,
-    });
-    registerBlockStyle('core/columns', {
-      name: 'startup-grid',
-      label: 'Startup grid',
-      isDefault: false,
-    });
-    registerBlockStyle('core/paragraph', {
-      name: 'txt-link',
-      label: 'TXT Link',
-      isDefault: false,
-    });
-    ; ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].forEach(heading => {
-      registerBlockStyle('core/heading', {
-        name: `size-${heading}`,
-        label: `${heading.toUpperCase()} size`,
-        isDefault: false,
-      });
-    })
-    registerBlockStyle('core/heading', {
-      name: `article-title`,
-      label: 'Article Title',
-      isDefault: false,
-    })
-  });
 })(window.wp);
+
+wp.domReady(() => {
+  const {unregisterBlockStyle, registerBlockStyle} = wp.blocks;
+
+  unregisterBlockStyle('core/button', 'fill');
+  registerBlockStyle('core/button', {
+    name: 'outline',
+    label: 'Outline',
+    isDefault: true,
+  });
+  registerBlockStyle('core/button', {
+    name: 'text',
+    label: 'Text',
+    isDefault: true,
+  });
+  registerBlockStyle('core/media-text', {
+    name: 'wide',
+    label: 'Wide',
+    isDefault: false,
+  });
+  registerBlockStyle('core/columns', {
+    name: 'partner-grid',
+    label: 'Partner grid',
+    isDefault: false,
+  });
+  registerBlockStyle('core/columns', {
+    name: 'startup-grid',
+    label: 'Startup grid',
+    isDefault: false,
+  });
+  registerBlockStyle('core/paragraph', {
+    name: 'txt-link',
+    label: 'TXT Link',
+    isDefault: false,
+  });
+  ; ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].forEach(heading => {
+    registerBlockStyle('core/heading', {
+      name: `size-${heading}`,
+      label: `${heading.toUpperCase()} size`,
+      isDefault: false,
+    });
+  })
+  registerBlockStyle('core/heading', {
+    name: `article-title`,
+    label: 'Article Title',
+    isDefault: false,
+  })
+});
