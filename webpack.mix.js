@@ -21,22 +21,6 @@ mix.sass('resources/assets/styles/app.scss', 'styles')
    .sass('resources/assets/styles/admin.scss', 'styles')
    .sass('resources/assets/styles/editor.scss', 'styles');
 
-mix.js('resources/assets/scripts/app.js', 'scripts')
-   .js('resources/assets/scripts/customizer.js', 'scripts')
-   .js('resources/assets/scripts/accordion.js', 'scripts')
-   .blocks('resources/assets/scripts/editor.js', 'scripts')
-   .extract();
-
-mix.copyWatched('resources/assets/images', 'dist/images', {base: 'resources/assets/images'})
-   .copyWatched('resources/assets/fonts', 'dist/fonts', {base: 'resources/assets/fonts'});
-
-mix.copy('resources/assets/scripts/polyfill.js', 'dist/scripts/polyfill.js')
-  .copy('node_modules/jquery/dist/jquery.min.js', 'dist/scripts/jquery.js');
-
-mix.autoload({
-  jquery: ['$', 'window.jQuery'],
-});
-
 mix.options({
   extractVueStyles: 'styles/vue.css',
   processCssUrls: false,
