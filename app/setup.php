@@ -29,8 +29,8 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script(
         'sage/app.js',
-        asset('scripts/app.js')->uri(),
-        ['jquery'],
+        asset('scripts/public/app.js')->uri(),
+        array(),
         $theme_version,
         array(
             'strategy' => 'defer',
